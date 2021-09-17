@@ -1,0 +1,51 @@
+.global-container{
+    display: flex;    
+    
+}
+app-side-nav{
+    flex-grow: 1;
+}
+.container, app-loader{
+   margin: auto;
+   flex-grow: 2;
+   
+}
+
+.card-content{
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2px;
+    margin-bottom: 50px;
+    margin-top: 70px;
+    padding-bottom: 80px;
+}
+.title{
+    text-align: center;
+    
+}
+
+.mat-card-header{
+    text-align: center;
+    justify-content: center;
+}
+
+
+
+ .delete{
+     margin-left: auto;
+ }
+
+ 
+@media (max-width: 768px) {
+
+    .global-container{
+        display: block;
+    }
+
+    .card-content{
+        max-width: 98%;
+    }
+   
+     
+   }

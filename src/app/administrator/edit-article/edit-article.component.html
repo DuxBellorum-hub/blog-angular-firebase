@@ -1,0 +1,57 @@
+
+<div class="container" *ngIf="!add">
+    <h1>Editer l'article</h1>
+
+    <mat-card *ngIf="article">
+        <form #formDirective="ngForm" (submit)="updateArticle()">
+            <div class="example-container">
+                <mat-form-field>
+                    <input matInput placeholder="title" [(ngModel)]="article.title" name="title" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="auteur" [(ngModel)]="article.author" name="author" required>
+                </mat-form-field>
+                <app-ngx-editor [placeholder]="'Ecrire ici...'" [minHeight]="100" [spellcheck]="true" [(ngModel)]="article.content"
+                    name="content">
+                </app-ngx-editor>
+            </div>
+            <mat-card-actions>
+                <span class = "imgError" *ngIf="fileUploaded">Fichié chargé !</span>
+                <input type="file"  (change)= "detectFile($event)" name="image" id="image" accept="image/*">
+            </mat-card-actions>
+
+            <mat-card-actions>
+                <button mat-raised-button color="warn" type="submit" [disabled]="!formDirective.form.valid || fileIsUploading">Editer
+                    l'article</button>
+            </mat-card-actions>
+
+            <a class="animated-arrow" [routerLink]="[ '/admin/list-edit']">
+                <span class="the-arrow -left">
+                    <span class="shaft"></span>
+                </span>
+                <span class="main">
+                    <span class="text">
+                        Retour à la liste des articles
+                    </span>
+                    <span class="the-arrow -right">
+                        <span class="shaft"></span>
+                    </span>
+                </span>
+            </a>
+
+
+
+        </form>
+    </mat-card>
+
+
+    <app-loader *ngIf="!article">
+    </app-loader>
+
+</div>
+
+<app-loader *ngIf="add">
+</app-loader>
+<div class="message" *ngIf="add">
+    <h2>{{loaderMsg}}</h2>
+</div>

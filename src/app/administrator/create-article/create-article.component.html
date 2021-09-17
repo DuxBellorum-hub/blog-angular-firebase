@@ -1,0 +1,58 @@
+<div *ngIf="!add">
+
+    <div class="title">
+        <h1> Ecrire un nouvel article </h1>
+    </div>
+    <div class="global-container">
+
+        <div class="container">
+
+            <mat-card>
+                <form #formDirective="ngForm" (submit)="createArticle(formDirective)">
+                    <div class="example-container">
+                        <mat-form-field>
+                            <input matInput placeholder="saisissez votre titre ici" required [(ngModel)]="article.title"
+                                name="title">
+                        </mat-form-field>
+                        <app-ngx-editor [placeholder]="'Ecrire ici...'" [spellcheck]="true"
+                            [(ngModel)]="article.content" name="content" [minHeight]="100" required>
+                        </app-ngx-editor>
+                        <mat-form-field class="author">
+                            <input matInput placeholder="Auteur" required name="author" [(ngModel)]="article.author">
+                        </mat-form-field>
+                        <mat-card-actions>
+                            <span class="imgError" *ngIf="fileUploaded">Fichié chargé !</span>
+                            <input type="file" (change)= "detectFile($event)" name="image" id="image" accept="image/*">
+                        </mat-card-actions>
+
+
+                        <mat-card-actions class="submit">
+                            <button mat-raised-button color="warn" type="submit" [disabled]="fileIsUploading">Publier</button>
+                        </mat-card-actions>
+                        
+                    </div>
+                    <a class="animated-arrow" [routerLink]="[ '/admin/list-edit']">
+                        <span class="the-arrow -left">
+                            <span class="shaft"></span>
+                        </span>
+                        <span class="main">
+                            <span class="text">
+                                Retour 
+                            </span>
+                            <span class="the-arrow -right">
+                                <span class="shaft"></span>
+                            </span>
+                        </span>
+                    </a>
+                </form>
+            </mat-card>
+        </div>
+
+    </div>
+</div>
+
+<app-loader *ngIf="add">
+</app-loader>
+<div class="message" *ngIf="add">
+    <h2>{{loaderMsg}}</h2>
+</div>

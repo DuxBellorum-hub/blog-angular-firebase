@@ -1,0 +1,26 @@
+ <mat-card class="side-nav">
+    <mat-card-header>
+        <mat-card-title>
+            <h6>Panneau d'admin</h6>
+            <hr>
+        </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        <a mat-raised-button color="accent" [routerLink]="[ '/' ]">Accueil</a>
+    </mat-card-content>
+    <mat-card-content>
+        <a mat-raised-button color="accent" [routerLink]="[ '/admin/create-article' ]">Ecrire article</a>
+    </mat-card-content>
+    <mat-card-content>
+        <a mat-raised-button color="accent" [routerLink]="[ '/admin/list-edit' ]">Editer article</a>
+    </mat-card-content>
+    <mat-card-content>
+        <a mat-raised-button color="accent" [routerLink]="[ '/admin/handle' ]">Supprimer article</a>
+    </mat-card-content>
+    <mat-card-content>
+        <a mat-raised-button color="accent" [routerLink]="[ '/admin/delete-comments' ]">Gérer commentaires</a>
+    </mat-card-content>
+
+</mat-card>
+ 

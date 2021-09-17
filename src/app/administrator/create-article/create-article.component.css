@@ -1,0 +1,58 @@
+.global-container{
+  display: flex;    
+}
+
+.container{
+  margin: auto;
+  width: 80%;
+  max-width: 80%;
+  text-align: center;
+}
+
+.title{
+  text-align: center;
+  
+}
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+  mat-card{
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2px;
+    margin-bottom: 50px;
+    margin-top: 70px;
+    padding-bottom: 80px;
+  }
+
+ .author{
+    max-width: 50%;
+ }
+
+ .submit{
+   text-align: center;
+   
+ }
+
+ mat-form-field{
+   padding-bottom: 40px;
+   padding-top: 40px;
+ }
+
+ .message{
+  text-align: center;
+  color: #f44336;
+ }
+
+ .imgError{
+   color: rgb(22, 138, 22);
+   display: block;
+   font-size: 0.9em;
+   margin-bottom: 3px;
+ }
+
+

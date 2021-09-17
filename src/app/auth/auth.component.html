@@ -1,0 +1,27 @@
+<div class="container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                <h3>Login</h3>
+                <span>(admin@admin.com / azerty)</span>
+                <p><em>{{errorMessage}}</em></p>
+            </mat-card-title>
+        </mat-card-header>
+        <form [formGroup]="loginForm" (submit)="onSubmit()">
+            <div class="example-container">
+                <mat-form-field>
+                    <input matInput type="text" placeholder="email" name="email" id="email"
+                        formControlName = "email" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="password" placeholder="password" name="password" id="password"
+                        formControlName="password" required>
+                </mat-form-field>
+            </div>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" type="submit"
+                    [disabled]="loginForm.invalid">Login</button>
+            </mat-card-actions>
+        </form>
+    </mat-card>
+</div>

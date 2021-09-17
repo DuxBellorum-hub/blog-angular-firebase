@@ -1,0 +1,40 @@
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  } 
+  .container{
+   text-align: center;
+  }
+
+  mat-card{
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2px;
+    margin-bottom: 50px;
+    margin-top: 70px;
+    padding-bottom: 80px;
+  }
+
+
+ .submit{
+   text-align: center;
+   
+ }
+
+ .message{
+  text-align: center;
+  color: #f44336;
+ }
+ 
+ .imgError{
+  color: rgb(32, 128, 32);
+  display: block;
+  font-size: 0.9em;
+  margin-bottom: 3px;
+}

@@ -1,0 +1,36 @@
+<div>
+    <div class="title">
+        <h1>Modérer les commentaires</h1>
+    </div>
+
+    <div class="global-container">
+        <app-side-nav></app-side-nav>
+
+        <div class="container" >
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Depuis l'article</th>
+                        <th>Pseudo</th>
+                        <th>Content</th>
+                        <th>date</th>
+                        <th>Supprimer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let i = index ; let comm of allComments">
+                        <td data-column="Depuis l'article">{{comm.article_id}} </td>
+                        <td data-column="Pseudo">{{comm.pseudo}} </td>
+                        <td data-column="content">{{comm.content}} </td>
+                        <td data-column="date">{{comm.createdOn | date:"dd/MM/yyyy"}} </td>
+                        <td data-column="supprimer"><a mat-button color="warn" (click)="delete(i)">supprimer</a></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+</div>

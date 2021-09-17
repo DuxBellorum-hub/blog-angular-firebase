@@ -1,0 +1,7 @@
+
+<mat-toolbar color="warn"> <h1> <a class="title" [routerLink]="['/']">Blog-Exemple</a></h1> 
+    <span class="example-spacer"></span>
+    <a mat-button *ngIf="isAuth" [routerLink]="[ '/admin' ]">Ajouter un article</a>
+    <a *ngIf="!isAuth" mat-raised-button color="primary" [routerLink]="[ '/admin' ]">Admin</a>
+    <a *ngIf="isAuth" mat-raised-button color="accent" (click)="logout()" >Déconnexion</a>
+</mat-toolbar> 

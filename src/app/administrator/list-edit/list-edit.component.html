@@ -1,0 +1,23 @@
+
+<div class="title">
+    <h1>Edition des articles</h1>
+</div>
+<div class="global-container">
+  <app-side-nav></app-side-nav>
+
+  <div class="container">
+      
+      <mat-card class="card-content">
+          <mat-card-header>
+              <mat-card-title>
+                  <h4>Sélectionner l'article a éditer'</h4>
+              </mat-card-title>
+          </mat-card-header>
+          <mat-nav-list #articles>
+              <a mat-list-item *ngFor="let i = index ; let article of articles$" [routerLink]="[ '/admin/edit/', i ]">{{article.title}}</a>
+          </mat-nav-list>
+
+      </mat-card>
+
+  </div>
+</div>

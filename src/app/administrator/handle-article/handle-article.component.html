@@ -1,0 +1,27 @@
+<div>
+    <div class="title">
+          <h1 >Supprimer des articles</h1>
+    </div>
+    <div class="global-container">
+        <app-side-nav></app-side-nav>
+    
+        <div *ngIf="articles$" class="container">
+            
+            <mat-card class="card-content">
+                <mat-card-header>
+                    <mat-card-title>
+                        <h4>Sélectionner les articles à supprimer</h4>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-list #articles>
+                    <mat-list-item role="listitem"  *ngFor="let i = index ; let article of articles$" >
+                        {{article.title}} <button class="delete" mat-button (click)="deleteArticle(i)" color="warn">Supprimer</button>
+                    </mat-list-item>
+                    
+                </mat-list>
+            </mat-card>
+    
+        </div>
+        <app-loader *ngIf="!articles$"></app-loader>
+    </div>
+</div>
